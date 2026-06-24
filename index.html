@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マイ作物紹介サイト</title>
+    <style>
+        /* 条件6：CSSでの装飾 / 加点項目：レスポンシブ対応 */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f9f4; /* 薄い緑色の背景 */
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4caf50; /* ナビゲーション背景 */
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        /* 条件1：大見出し */
+        h1 {
+            color: #2e7d32;
+            text-align: center;
+            border-bottom: 3px solid #2e7d32;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #388e3c;
+            border-left: 5px solid #388e3c;
+            padding-left: 10px;
+            margin-top: 40px;
+        }
+        /* 条件5：画像 */
+        .crop-img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+        /* 条件4：表（table） */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        /* ボタンのスタイル */
+        .btn-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn-school { background-color: #007bc2; }
+        .btn-栽培 { background-color: #ff9800; }
+        .btn-js { background-color: #e91e63; }
+        
+        .btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#nasu">ナス（メイン）</a> | 
+            <a href="#tomato">ミニトマト（サブ）</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section id="nasu">
+            <h1>マイ作物：ナス（茄子）</h1>
+
+            <img src="https://images.unsplash.com/photo-1627918663806-03f905c1d68a?auto=format&fit=crop&w=600&q=80" alt="ナスの写真" class="crop-img">
+
+            <h2>作物の特徴</h2>
+            <p>ナスはインド原産の夏野菜で、日本の食卓に欠かせない定番の作物です。水分が90%以上含まれており、体を冷やす効果があるため夏バテ予防にぴったりです。皮の紫色の成分である「ナスニン」には、強い抗酸化作用があり健康にも良いとされています。</p>
+
+            <h2>栽培のポイント</h2>
+            <ul>
+                <li><strong>日当たりと水やり：</strong> 日当たりを非常に好むため、よく日の当たる場所で育て、土の表面が乾いたらたっぷり水をやります。</li>
+                <li><strong>肥料切れに注意：</strong> 収穫期間が長いため、定期的な追肥（肥料を追加すること）が美味しいナスをたくさん収穫するコツです。</li>
+                <li><strong>仕立てと整枝：</strong> 風通しと日当たりを良くするために、主枝と側枝2本の「3本仕立て」にするのが一般的です。</li>
+            </ul>
+
+            <h2>栽培データ</h2>
+            <table>
+                <tr>
+                    <th>種まき・苗植え時期</th>
+                    <td>4月下旬～5月上旬（苗植えがおすすめ）</td>
+                </tr>
+                <tr>
+                    <th>収穫時期</th>
+                    <td>6月下旬～10月上旬</td>
+                </tr>
+                <tr>
+                    <th>栽培難易度</th>
+                    <td>★★★☆☆（普通：水やりと肥料の管理がポイント）</td>
+                </tr>
+            </table>
+        </section>
+
+        <hr style="margin: 40px 0; border: 0; border-top: 1px dashed #ccc;">
+
+        <section id="tomato">
+            <h2>マイ作物2：ミニトマト</h2>
+            <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=600&q=80" alt="ミニトマトの写真" class="crop-img">
+            <p>ミニトマトは初心者でも非常に育てやすく、ベランダのプランター栽培でも大人気の野菜です。リコピンやビタミンCが豊富に含まれており、栄養価が非常に高いのが特徴です。たくさんの実が一度に実るため、収穫の喜びを何度も味わうことができます。</p>
+            <ul>
+                <li><strong>わき芽かき：</strong> 栄養が分散しないよう、葉の付け根から出てくる「わき芽」を早めに摘み取ります。</li>
+                <li><strong>水のやりすぎに注意：</strong> 実が割れるのを防ぐため、実がつき始めたら水やりを少し控えめにします。</li>
+                <li><strong>支柱を立てる：</strong> 背が高くなるため、成長に合わせてしっかりとした支柱で支えてあげます。</li>
+            </ul>
+        </section>
+
+        <h2>関連リンク</h2>
+        <div class="btn-container">
+            <a href="https://saijo-ah.esnet.ed.jp/" target="_blank" class="btn btn-school">西条農業高校 公式サイト</a>
+
+            <a href="https://www.takii.co.jp/tsk/manual/nasu.html" target="_blank" class="btn btn-栽培">ナスの育て方（タキイ種苗）</a>
+
+            <button id="js-demo-btn" class="btn btn-js">ここを押してみてね！</button>
+        </div>
+    </div>
+
+    <script>
+        const btn = document.getElementById('js-demo-btn');
+        btn.addEventListener('click', function() {
+            // ボタンの文字と色が変わる
+            this.textContent = '🎉 応援ありがとうございます！';
+            this.style.backgroundColor = '#9c27b0';
+            alert('今日の農業と情報のテスト、頑張ってください！応援しています！');
+        });
+    </script>
+</body>
+</html>
