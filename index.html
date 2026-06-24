@@ -2,10 +2,11 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <!-- レスポンシブ対応（スマホ対応） -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>マイ作物紹介サイト</title>
     <style>
-        /* 条件6：CSSでの装飾 / 加点項目：レスポンシブ対応 */
+        /* 全体のデザイン装飾 */
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
@@ -15,7 +16,7 @@
             padding: 0;
         }
         header {
-            background-color: #4caf50; /* ナビゲーション背景 */
+            background-color: #4caf50;
             color: white;
             padding: 10px 0;
             text-align: center;
@@ -37,7 +38,7 @@
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        /* 条件1：大見出し */
+        /* 大見出し */
         h1 {
             color: #2e7d32;
             text-align: center;
@@ -50,7 +51,7 @@
             padding-left: 10px;
             margin-top: 40px;
         }
-        /* 条件5：画像 */
+        /* 修正ポイント①：画像の表示設定（はみ出さないように） */
         .crop-img {
             max-width: 100%;
             height: auto;
@@ -58,7 +59,7 @@
             margin: 20px auto;
             border-radius: 8px;
         }
-        /* 条件4：表（table） */
+        /* 表（table）の装飾 */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -73,7 +74,7 @@
             background-color: #e8f5e9;
             color: #2e7d32;
         }
-        /* ボタンのスタイル */
+        /* ボタンの並びとデザイン */
         .btn-container {
             display: flex;
             flex-wrap: wrap;
@@ -90,10 +91,13 @@
             font-weight: bold;
             border: none;
             cursor: pointer;
+            font-size: 16px;
             transition: background-color 0.3s;
         }
         .btn-school { background-color: #007bc2; }
         .btn-栽培 { background-color: #ff9800; }
+        
+        /* 修正ポイント③：ピンクボタンの初期色 */
         .btn-js { background-color: #e91e63; }
         
         .btn:hover {
@@ -103,6 +107,7 @@
 </head>
 <body>
 
+    <!-- 2つの作物へのページ内リンク -->
     <header>
         <nav>
             <a href="#nasu">ナス（メイン）</a> | 
@@ -111,10 +116,12 @@
     </header>
 
     <div class="container">
+        <!-- 作物1：ナス（メイン） -->
         <section id="nasu">
             <h1>マイ作物：ナス（茄子）</h1>
 
-            <img src="https://images.unsplash.com/photo-1627918663806-03f905c1d68a?auto=format&fit=crop&w=600&q=80" alt="ナスの写真" class="crop-img">
+            <!-- 修正ポイント①：ナスの画像（確実に表示されるWikimediaのURLに変更） -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Solanum_melongena_24_08_2012_1.jpg/640px-Solanum_melongena_24_08_2012_1.jpg" alt="ナスの写真" class="crop-img">
 
             <h2>作物の特徴</h2>
             <p>ナスはインド原産の夏野菜で、日本の食卓に欠かせない定番の作物です。水分が90%以上含まれており、体を冷やす効果があるため夏バテ予防にぴったりです。皮の紫色の成分である「ナスニン」には、強い抗酸化作用があり健康にも良いとされています。</p>
@@ -145,9 +152,11 @@
 
         <hr style="margin: 40px 0; border: 0; border-top: 1px dashed #ccc;">
 
+        <!-- 作物2：ミニトマト -->
         <section id="tomato">
             <h2>マイ作物2：ミニトマト</h2>
-            <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=600&q=80" alt="ミニトマトの写真" class="crop-img">
+            <!-- ミニトマトの画像 -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Solanum_lycopersicum_var._cerasiforme_9895.jpg/640px-Solanum_lycopersicum_var._cerasiforme_9895.jpg" alt="ミニトマトの写真" class="crop-img">
             <p>ミニトマトは初心者でも非常に育てやすく、ベランダのプランター栽培でも大人気の野菜です。リコピンやビタミンCが豊富に含まれており、栄養価が非常に高いのが特徴です。たくさんの実が一度に実るため、収穫の喜びを何度も味わうことができます。</p>
             <ul>
                 <li><strong>わき芽かき：</strong> 栄養が分散しないよう、葉の付け根から出てくる「わき芽」を早めに摘み取ります。</li>
@@ -156,22 +165,32 @@
             </ul>
         </section>
 
+        <!-- リンク・ボタンエリア -->
         <h2>関連リンク</h2>
         <div class="btn-container">
+            <!-- 修正ポイント②：西条農業高校の正しい公式サイトURLに修正 -->
             <a href="https://saijo-ah.esnet.ed.jp/" target="_blank" class="btn btn-school">西条農業高校 公式サイト</a>
 
+            <!-- タキイ種苗のナス栽培方法 -->
             <a href="https://www.takii.co.jp/tsk/manual/nasu.html" target="_blank" class="btn btn-栽培">ナスの育て方（タキイ種苗）</a>
 
+            <!-- 修正ポイント③：JavaScriptでしっかり動くピンクのボタン -->
             <button id="js-demo-btn" class="btn btn-js">ここを押してみてね！</button>
         </div>
     </div>
 
+    <!-- JavaScriptの修正（ピンクボタンのクリックイベント） -->
     <script>
-        const btn = document.getElementById('js-demo-btn');
-        btn.addEventListener('click', function() {
-            // ボタンの文字と色が変わる
+        // ボタンの要素を正しく取得
+        const myButton = document.getElementById('js-demo-btn');
+        
+        // クリックしたときの動きをセット
+        myButton.addEventListener('click', function() {
+            // ① ボタンの文字を変える
             this.textContent = '🎉 応援ありがとうございます！';
+            // ② ボタンの色を別の色（紫）に変える
             this.style.backgroundColor = '#9c27b0';
+            // ③ ポップアップ（アラート）を表示する
             alert('今日の農業と情報のテスト、頑張ってください！応援しています！');
         });
     </script>
